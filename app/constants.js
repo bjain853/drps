@@ -130,11 +130,11 @@ export const METALS = [
 export const NAV = ["About", "Products"];
 
 export const CO = {
-    name: "DRPS JAIN EXIM INDIA",
-    gstin: "07AAIPJ8052F1ZQ",
-    address: "4843, Bara Tooti Chowk, Sadar Bazar, Delhi-110006",
-    mobile: "9811230687, 9910910687",
-    phone: "011-45546194",
-    email: "mejnbobby@gmail.com",
-    est: "1954",
+  name: "DRPS JAIN EXIM INDIA",
+  gstin: "07AAIPJ8052F1ZQ",
+  address: "4843, Bara Tooti Chowk, Sadar Bazar, Delhi-110006",
+  mobile: "9811230687, 9910910687",
+  phone: "011-45546194",
+  email: "mejnbobby@gmail.com",
+  est: "1954",
 }; 

@@ -44,7 +44,8 @@
 * {
   box-sizing: var(--box-sizing);
   margin: var(--base-margin);
-  padding: var(--base-padding)
+  padding: var(--base-padding);
+  font-family: var(--font-merriweather)
 }
 
 html {
@@ -69,6 +70,7 @@ nav {
   padding: 0 30px;
   position: absolute;
   top: 0;
+  font-family: var(--font-montserrat);
   left: 0;
   right: 0;
   z-Index: 100,
@@ -307,9 +309,9 @@ select option {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 4px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 5px;
   -webkit-tap-highlight-color: transparent
 }

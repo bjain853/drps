@@ -1,14 +1,12 @@
 'use client'
 
 import Link from 'next/link';
-
 import useIsMobile from '../hooks/useIsMobile';
 
 
 export default function ProductModal({ sel, setSel }) {
 
     const isMobile = useIsMobile()
-
     return (
         <div className="overlay">
             <div style={{ background: "#082220", border: "1px solid #1D5048", maxWidth: 560, width: "100%", padding: isMobile ? "28px 20px" : "44px", position: "relative", maxHeight: "90vh", overflowY: "auto" }}
