@@ -1,0 +1,128 @@
+.about-container {
+    padding: 80px 40px;
+}
+
+.spacer {
+    margin-bottom: 72;
+}
+
+.values-container {
+    background: #082220;
+    border: 1px solid #154038;
+    padding: 52px 56px;
+    margin-bottom: 80;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 44;
+}
+
+.timeline-container {
+    margin-bottom: 90;
+}
+
+.timeline-divider {
+    padding-left: 40;
+    position: relative;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 10;
+    top: 8;
+    bottom: 8;
+    width: 1;
+    background: linear-gradient(to bottom, #C8A84B44, #C8A84B, #C8A84B44);
+
+}
+
+.timeline-item-container {
+    padding-left: 28;
+    position: relative;
+}
+
+.timeline-item {
+    left: -35;
+    position: absolute;
+    top: 5;
+    width: 9;
+    height: 9;
+    border-radius: 50%;
+    border: 1px solid #C8A84B;
+}
+
+.intro-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80;
+    margin-bottom: 90;
+}
+
+.header-container {
+    margin-bottom: 72;
+}
+
+.header {
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    color: #4A7A72;
+    font-weight: 300;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+}
+
+@media (max-width:768px) {
+    .about-container {
+        padding: 50px 20px 60px;
+    }
+
+    .spacer {
+        margin-bottom: 40;
+    }
+
+    .values-container {
+        padding: 28px 20px;
+        margin-bottom: 48;
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr;
+        gap: 32;
+    }
+
+
+    .timeline-container {
+        margin-bottom: 56;
+    }
+
+    .timeline-divider {
+        padding-left: 28;
+    }
+
+    .timeline-line {
+        left: 8;
+    }
+
+    .timeline-item-container {
+        padding-left: 20
+    }
+
+    .timeline-item {
+        left: -24
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 32;
+        margin-bottom: 56;
+        display: grid;
+    }
+
+    .header-container {
+        margin-bottom: 48;
+    }
+
+    .header {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+    }
+}

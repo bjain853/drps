@@ -1,45 +1,4 @@
-:root {
-  /* Base Reset & Layout */
-  --base-margin: 0;
-  --base-padding: 0;
-  --box-sizing: border-box;
-
-  /* Scrollbar Styles */
-  --scrollbar-width: 4px;
-  --scrollbar-track-bg: #061A18;
-  --scrollbar-thumb-bg: #8B6914;
-
-  /* Colors */
-  --primary-color: #C8A84B;
-  --secondary-color: #8B6914;
-  --text-color: #eff7f5;
-  --bg-color: #061A18;
-  --input-bg: #082220;
-  --input-border: #154038;
-  --input-text: #D4EAE6;
-  --overlay-bg: rgba(3, 10, 9, .92);
-
-  /* Fonts */
-  --font-montserrat: 'Montserrat', Times, sans-serif;
-  --font-rajdhani: 'Rajdhani', sans-serif;
-  --font-cormorant: 'Cormorant Garamond', serif;
-  --font-merriweather: 'Merriweather', serif;
-
-  /* Gradients */
-  --gradient-card: linear-gradient(135deg, #0C2E2A 0%, #082220 100%);
-  --gradient-button: linear-gradient(135deg, #8B6914, #C8A84B, #8B6914);
-  --gradient-line: linear-gradient(to bottom, transparent, #C8A84B, transparent);
-  --gradient-div: linear-gradient(to right, transparent, #154038, #C8A84B, #154038, transparent);
-
-  /* Transitions & Animations */
-  --transition-duration: 0.35s;
-  --animation-fadeup-duration: 0.7s;
-
-  /* Spacing */
-  --spacing-padding: 4px;
-  --spacing-margin: 16px;
-}
-
+@import 'vars.css';
 
 * {
   box-sizing: var(--box-sizing);
@@ -65,6 +24,12 @@ html {
   border-radius: 2px
 }
 
+.root-div {
+  background: #061A18;
+  min-height: 100vh;
+  color: #D4EAE6;
+}
+
 nav {
   transition: all .4s;
   padding: 0 30px;
@@ -73,35 +38,137 @@ nav {
   font-family: var(--font-montserrat);
   left: 0;
   right: 0;
-  z-Index: 100,
+  z-Index: 100;
+  background: rgba(6, 26, 24, .98);
+  backdrop-filter: none;
+  border-bottom: none;
 }
 
 .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1280;
   margin: 10px auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 3.5rem
+
+  height: 3.5rem;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+
+    a {
+      cursor: pointer;
+
+    }
+  }
+
+  .nl {
+    letter-spacing: .18em;
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    transition: color .3s;
+    padding: 10px 0;
+  }
+
+  .nl:hover,
+  .nl.on {
+    color: var(--primary-color);
+  }
+
+  #check {
+    display: none;
+  }
+
+  #hamburger-icon-close {
+    display: none;
+  }
 }
 
-.nl {
-  cursor: pointer;
-  letter-spacing: .18em;
-  font-family: var(--font-montserrat);
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  color: var(--text-color);
-  transition: color .3s;
-  padding: 4px 0;
-  text-decoration: none
+.logo-text {
+  display: block;
+  font-family: var(--font-merriweather);
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: .14em;
+  color: #d6b552;
+  line-height: 1.1;
 }
 
-.nl:hover,
-.nl.on {
-  color: var(--primary-color)
+@media (max-width: 768px) {
+
+  .logo-text {
+    display: none;
+    font-size: 0.75rem;
+  }
+
+  .checkbtn {
+    display: block;
+    order: 1;
+    margin-right: 20px;
+  }
+
+  #hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+
+  /* 3. Create the 3 hamburger lines */
+  #hamburger-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-drawer {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    /* Hidden off-screen to the left */
+    height: 40%;
+    width: 250px;
+    background: var(--gradient-card);
+    transition: transform 0.4s ease;
+    /* Smooth sliding transition */
+    z-index: 1;
+    padding-top: 60px;
+
+  }
+
+  #check:checked~.hamburger-drawer {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: -2em;
+    justify-content: space-around;
+    transform: translateX(-250px);
+
+    #hamburger-icon-close {
+      display: block;
+      align-self: self-start;
+      margin-left: 1.5em;
+      color: var(--primary-color);
+      font-weight: 800;
+    }
+  }
 }
+
 
 .card {
   background: var(--gradient-card);

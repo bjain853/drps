@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Suspense } from 'react';
 
@@ -9,7 +9,6 @@ import InformationCard from './information_card';
 export default function ContactPage() {
 
     const isMobile = useIsMobile();
-
 
     return (
         <div style={{ padding: isMobile ? "50px 20px 60px" : "80px 40px" }}>

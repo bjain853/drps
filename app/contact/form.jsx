@@ -22,16 +22,17 @@ export default function ContactForm() {
     const [sent, setSent] = useSent();
     const { showToast } = useToast();
 
-    if (sent) return (<div style={{ minHeight: "70vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px 20px", textAlign: "center" }}>
-        <div>
-            <div style={{ fontSize: "2.8rem", color: "#C8A84B", marginBottom: 20 }}>◆</div>
-            <h2 style={{ fontSize: isMobile ? "2rem" : "2.4rem", fontWeight: 300, marginBottom: 14 }}>Enquiry Received</h2>
-            <p style={{ color: "#4A7A72", marginBottom: 32, maxWidth: 400, margin: "0 auto 32px", fontSize: ".92rem", lineHeight: 1.8 }}>
-                Thank you for contacting DRPS Jain Exim India. We will get back to you promptly — typically within the same business day.
-            </p>
-            <button className="obtn" style={{ padding: "13px 32px" }} onClick={() => setSent(false)}>Send Another</button>
-        </div>
-    </div>)
+    if (sent) return (
+        <div style={{ minHeight: "70vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px 20px", textAlign: "center" }}>
+            <div>
+                <div style={{ fontSize: "2.8rem", color: "#C8A84B", marginBottom: 20 }}>◆</div>
+                <h2 style={{ fontSize: isMobile ? "2rem" : "2.4rem", fontWeight: 300, marginBottom: 14 }}>Enquiry Received</h2>
+                <p style={{ color: "#4A7A72", marginBottom: 32, maxWidth: 400, margin: "0 auto 32px", fontSize: ".92rem", lineHeight: 1.8 }}>
+                    Thank you for contacting DRPS Jain Exim India. We will get back to you promptly — typically within the same business day.
+                </p>
+                <button className="obtn" style={{ padding: "13px 32px" }} onClick={() => setSent(false)}>Send Another</button>
+            </div>
+        </div>)
     else
         return (
             <form>

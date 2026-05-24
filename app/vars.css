@@ -1,0 +1,41 @@
+:root {
+    /* Base Reset & Layout */
+    --base-margin: 0;
+    --base-padding: 0;
+    --box-sizing: border-box;
+
+    /* Scrollbar Styles */
+    --scrollbar-width: 4px;
+    --scrollbar-track-bg: #061A18;
+    --scrollbar-thumb-bg: #8B6914;
+
+    /* Colors */
+    --primary-color: #C8A84B;
+    --secondary-color: #8B6914;
+    --text-color: #eff7f5;
+    --bg-color: #061A18;
+    --input-bg: #082220;
+    --input-border: #154038;
+    --input-text: #D4EAE6;
+    --overlay-bg: rgba(3, 10, 9, .92);
+
+    /* Fonts */
+    --font-montserrat: 'Montserrat', Times, sans-serif;
+    --font-rajdhani: 'Rajdhani', sans-serif;
+    --font-cormorant: 'Cormorant Garamond', serif;
+    --font-merriweather: 'Merriweather', serif;
+
+    /* Gradients */
+    --gradient-card: linear-gradient(135deg, #0C2E2A 0%, #082220 100%);
+    --gradient-button: linear-gradient(135deg, #8B6914, #C8A84B, #8B6914);
+    --gradient-line: linear-gradient(to bottom, transparent, #C8A84B, transparent);
+    --gradient-div: linear-gradient(to right, transparent, #154038, #C8A84B, #154038, transparent);
+
+    /* Transitions & Animations */
+    --transition-duration: 0.35s;
+    --animation-fadeup-duration: 0.7s;
+
+    /* Spacing */
+    --spacing-padding: 4px;
+    --spacing-margin: 16px;
+}
