@@ -17,7 +17,7 @@ export default function MetalGrid() {
                     <div style={{ fontSize: ".6rem", letterSpacing: ".38em", color: "#C8A84B", textTransform: "uppercase", marginBottom: 12 }}>What We Trade</div>
                     <h2 style={{ fontSize: isMobile ? "1.9rem" : "clamp(2rem,4vw,3rem)", fontWeight: 300, letterSpacing: "-.02em" }}>Our Metal Portfolio</h2>
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(auto-fill,minmax(185px,1fr))", gap: 4 }}>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(auto-fill,minmax(14rem,1fr))", gap: 4 }}>
                     {METALS.map(m => (
                         <Link style={{ textDecoration: 'none' }} key={m.id} href={`/products?metal=${m.id}`}>
                             <div className="card" style={{ padding: isMobile ? "20px 16px" : "30px 30px" }}>

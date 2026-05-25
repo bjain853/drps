@@ -1,20 +1,40 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 import Logo from '../components/logo';
 import { NAV } from '../constants';
-import usePage from '../hooks/usePage';
 
-export default function Navbar() {
+export default function Navbar({ }) {
 
-    const [page, setPage] = usePage();
+    const pathname = usePathname();
+
+    const [page, setPage] = useState("Home");
+
+    useEffect(() => {
+        switch (pathname) {
+            case "/about":
+                setPage("About");
+                break;
+            case "/products":
+                setPage("Products")
+                break;
+            case "/contact":
+                setPage("Contact");
+                break;
+            default:
+                setPage("Home");
+                break;
+        }
+    }, [pathname]);
 
     return (
         <nav>
             <div className='nav-container'>
                 <label >
-                    <Link href="/" onClick={() => setPage("Home")}>
+                    <Link href="/">
                         <Logo />
                     </Link>
                 </label>
@@ -30,17 +50,15 @@ export default function Navbar() {
                     </label>
                     {NAV.map(n =>
                         <li key={n} className={`nl ${page === n ? "on" : ""}`}>
-                            <Link href={n.toLowerCase()} onClick={() => setPage(n)} >
+                            <Link href={n.toLowerCase()}>
                                 {n}
                             </Link>
                         </li>
                     )}
                     <li key='contact'>
-                        <button className="gbtn" style={{ padding: "15px 22px" }} onClick={() => setPage("Contact")}>
-                            <Link href="/contact">
-                                Enquire
-                            </Link>
-                        </button>
+                        <Link className={`gbtn ${page === "Contact" ? "on" : ""}`} style={{ padding: "15px 22px", color: "#041513" }} href="/contact">
+                            Enquire
+                        </Link>
                     </li>
                 </ul>
 

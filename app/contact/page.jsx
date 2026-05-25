@@ -1,14 +1,21 @@
 "use client";
 
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 
 import useIsMobile from "../hooks/useIsMobile";
+import usePage from '../hooks/usePage';
 import ContactForm from './form';
 import InformationCard from './information_card';
 
 export default function ContactPage() {
 
     const isMobile = useIsMobile();
+
+    const [_, setPage] = usePage();
+
+    useEffect(() => {
+        setPage("Contact");
+    },);
 
     return (
         <div style={{ padding: isMobile ? "50px 20px 60px" : "80px 40px" }}>

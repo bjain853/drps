@@ -217,6 +217,13 @@ nav {
   -webkit-tap-highlight-color: transparent
 }
 
+.gbtn.on {
+  color: #041513;
+  background: linear-gradient(135deg, #A17F26 0%, #E3C46C 50%, #8C6A18 100%);
+  transform: scale(0.98);
+
+}
+
 .gbtn:hover {
   background-position: right center;
   box-shadow: 0 8px 28px rgba(200, 168, 75, .4)
@@ -442,4 +449,247 @@ a:visited {
   /* or your specific color, e.g., #0070f3 */
   text-decoration: none;
   /* optional: remove underline */
+}
+
+/* Full-screen overlay background */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #06231E;
+  /* Your signature deep forest green */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* Ensures it sits on top of all content */
+  font-family: serif;
+}
+
+/* The outer luxury ring container */
+.luxury-spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* Creates the background tracking ring */
+  background: linear-gradient(#0c332c, #041513);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* The actual rotating metallic elements */
+.luxury-spinner span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* Luxury gold metallic gradient */
+  background: linear-gradient(135deg, #C8A84B 0%, #E3C46C 40%, #A38430 70%, transparent 100%);
+  animation: spin 1.4s linear infinite;
+}
+
+/* The secondary layer to give the gold depth and a "liquid" weight */
+.luxury-spinner span:nth-child(2) {
+  animation: spin 2s linear infinite reverse;
+  opacity: 0.6;
+  filter: blur(1px);
+}
+
+/* The inner mask that turns the solid circle into a sharp, sleek ring */
+.luxury-spinner::after {
+  content: '';
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  background-color: #06231E;
+  /* Matches the main background exactly */
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Elegant, tracked-out branding text underneath */
+.loader-text {
+  margin-top: 24px;
+  color: #C8A84B;
+  font-size: 0.68rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.8;
+  animation: pulse 2s ease-in-out infinite;
+  text-align: center;
+  padding-left: 0.4em;
+  /* Offsets letter-spacing to perfectly center the text */
+}
+
+/* Smooth 360-degree rotation animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Subtle luxury brand pulsing animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    letter-spacing: 0.38em;
+  }
+
+  50% {
+    opacity: 0.95;
+    letter-spacing: 0.44em;
+  }
+}
+
+/* Container layout styling */
+.error-container {
+  min-height: 100vh;
+  background-color: #06231E;
+  /* Deep forest green signature color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: serif;
+}
+
+/* Subtle background architectural watermark */
+.error-watermark {
+  position: absolute;
+  font-size: clamp(12rem, 35vw, 28rem);
+  font-weight: 700;
+  color: #11332E;
+  /* Barely visible green highlight contrast */
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+/* Core content wrapper */
+.error-content {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Meta info label over the header */
+.error-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: #C8A84B;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* Dynamic main heading */
+.error-title {
+  color: #4A7A72;
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px 0;
+}
+
+/* Fine-line element breakout */
+.error-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8A84B, transparent);
+  margin-bottom: 24px;
+}
+
+/* Contextual supporting narrative */
+.error-message {
+  color: #d6faf4;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0 0 40px 0;
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+/* Navigation button matrix adjustments */
+.error-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Shared button layout wrappers for links */
+.error-actions .gbtn,
+.error-actions .obtn {
+  padding: 16px 32px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Gold Primary CTA Solid Button */
+.error-actions .gbtn {
+  background: linear-gradient(135deg, #C8A84B 0%, #A38430 100%);
+  color: #06231E;
+  border: 1px solid #C8A84B;
+}
+
+.error-actions .gbtn:hover {
+  background: linear-gradient(135deg, #A17F26 0%, #E3C46C 50%, #8C6A18 100%);
+  transform: translateY(-2px);
+}
+
+/* Transparent Dark Border Alternative CTA Button */
+.error-actions .obtn {
+  background: transparent;
+  color: #C8A84B;
+  border: 1px solid #1D5048;
+}
+
+.error-actions .obtn:hover {
+  border-color: #C8A84B;
+  background: rgba(200, 168, 75, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Small device handling */
+@media (max-width: 480px) {
+  .error-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .error-actions .gbtn,
+  .error-actions .obtn {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

@@ -2,6 +2,7 @@ import Hero from "./home/hero";
 import MetalGrid from "./home/metal_grid";
 import Stats from "./home/stats";
 import Heritage from "./home/heritage";
+import Loading from "./loading";
 
 
 export const metadata = {

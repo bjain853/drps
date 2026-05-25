@@ -1,9 +1,8 @@
-import Link from 'next/link';
-
 import Header from './header';
 import Intro from './intro';
 import Timeline from './timeline';
 import Values from './values';
+import ContactUsButton from './contact_us_button';
 import "./about.css";
 
 
@@ -32,11 +31,7 @@ export default function AboutPage() {
                 <Timeline />
                 <Values />
                 <div style={{ textAlign: "center" }}>
-                    <button className="gbtn" style={{ padding: "15px 44px" }} >
-                        <Link href="/contact">
-                            Get in Touch
-                        </Link>
-                    </button>
+                    <ContactUsButton />
                 </div>
             </div>
         </div>
