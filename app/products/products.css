@@ -1,0 +1,131 @@
+.card {
+    padding: 34px 30px;
+}
+
+.card-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22;
+}
+
+.card-header-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    color: #C8A84B;
+
+}
+
+.card-header-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-top: 2
+}
+
+.product-header {
+    margin-bottom: 56;
+}
+
+.product-container {
+    padding: 80px 40px;
+}
+
+#product-page-title {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 300;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+    color: #4A7A72;
+}
+
+.product-grid-container {
+    display: grid;
+    gap: 8;
+    z-index: 10;
+    grid-template-columns: repeat(auto-fill, minmax(25em, 2fr));
+}
+
+.product-footer {
+    background: #082220;
+    border: 1px solid #154038;
+    padding: 44px 52px;
+    margin-top: 72;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 24
+}
+
+.footer-heading {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 6
+}
+
+.contact-box {
+    margin-bottom: 52;
+}
+
+.contact-text {
+    margin-bottom: 52;
+    color: #d6faf4;
+    font-size: .84rem;
+    line-height: 1.85;
+    max-width: 700,
+}
+
+@media (max-width:768px) {
+    .card {
+        padding: 24px 20px;
+    }
+
+    .card-header-container {
+        margin-bottom: 16;
+    }
+
+    .card-header-title {
+        font-size: 1.6rem;
+    }
+
+    .card-header-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .product-container {
+        padding: 50px 20px 60px;
+    }
+
+    .product-header {
+        margin-bottom: 36;
+    }
+
+    #product-page-title {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+    }
+
+    .product-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-footer {
+        padding: 28px 20px;
+        margin-top: 40;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20
+    }
+
+    .footer-heading {
+        font-size: 1.25rem;
+    }
+
+    .contact-box {
+        margin-bottom: 28;
+    }
+
+    .contact-text {
+        margin-bottom: 32;
+    }
+}
