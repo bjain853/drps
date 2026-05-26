@@ -38,8 +38,7 @@ nav {
   font-family: var(--font-montserrat);
   left: 0;
   right: 0;
-  z-Index: 100;
-  background: rgba(6, 26, 24, .98);
+  background: rgba(6, 26, 24, 0.98);
   backdrop-filter: none;
   border-bottom: none;
 }
@@ -50,7 +49,6 @@ nav {
   align-items: center;
   max-width: 1280;
   margin: 10px auto;
-
   height: 3.5rem;
 
   ul {
@@ -61,7 +59,7 @@ nav {
     align-items: center;
     list-style: none;
     padding: 10px;
-    margin: 0;
+    margin-bottom: 3rem;
 
     a {
       cursor: pointer;
@@ -141,13 +139,17 @@ nav {
     top: 0;
     right: -250px;
     /* Hidden off-screen to the left */
-    height: 40%;
+    height: 50%;
     width: 250px;
     background: var(--gradient-card);
     transition: transform 0.4s ease;
     /* Smooth sliding transition */
-    z-index: 1;
+    z-index: 100;
     padding-top: 60px;
+
+    li {
+      margin: 20px;
+    }
 
   }
 
@@ -161,8 +163,9 @@ nav {
 
     #hamburger-icon-close {
       display: block;
+      left: 0;
+      margin-left: 20px;
       align-self: self-start;
-      margin-left: 1.5em;
       color: var(--primary-color);
       font-weight: 800;
     }
